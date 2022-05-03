@@ -26,3 +26,25 @@ function postRequest(endpointUrl, objData) {
         }
     });
 }
+
+function strLengthIsValid(str, minLen, maxLen) {
+    let strLen = str.length;
+    if (minLen <= strLen && strLen <= maxLen) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function isEmpty(str) {
+    return str === "";
+}
+
+function isLettesOrNumbers(str) {
+    return str.match(/[^A-Za-z0-9]+/);
+}
+
+function usernameIsAlreadyTaken(str) {
+    return false;
+}
