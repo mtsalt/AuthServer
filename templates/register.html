@@ -18,22 +18,21 @@
         <div class="auth-title">Register</div>
         <div id="input-container">
             <input id="username" class="auth-input" type="text" placeholder="Username">
-            <div id="username-error" class="error-info"></div>
+            <p id="username-error-info" class="error-info"></p>
             <input id="email" class="auth-input" type="text" placeholder="Email">
-            <div id="username-error" class="error-info"></div>
+            <p id="email-error-info" class="error-info"></p>
             <input id="password" class="auth-input" type="password" placeholder="Password">
-            <div id="username-error" class="error-info"></div>
+            <p id="password-error-info" class="error-info"></p>
         </div>
         <div class="submit-button-area">
             <button class="submit-button" id="register" onclick="postRegisterData()">Register</button>
         </div>
         <div class="partition-line"></div>
-        <div class="go-to"><a href="#">Already have an account? Sign in</a></div>
+        <div class="go-to"><a href="/signin">Already have an account? Sign in</a></div>
         <div id="menu">
-            <div class="menu-item"><a href="#">Home</a></div>
-            <div class="menu-item"><a href="#">Register</a></div>
-            <div class="menu-item"><a href="#">Sign in</a></div>
-            <div class="menu-item"><a href="#">About</a></div>
+            <div class="menu-item"><a href="/">Home</a></div>
+            <div class="menu-item"><a href="/signin">Sign in</a></div>
+            <div class="menu-item"><a href="/forgot_password">Forgot password</a></div>
         </div>
     </main>
 </body>

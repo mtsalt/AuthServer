@@ -13,7 +13,7 @@ main {
     font-weight: bold;
     text-align: center;
     color: rgb(24, 23, 23);
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 #input-container {
@@ -25,7 +25,16 @@ main {
     outline: none;
     border: solid 2px black;
     padding: 6px 10px;
-    margin-bottom: 30px;
+}
+
+.error-info {
+    color: red;
+    text-align: left;
+    font-size: 80%;
+    height: 30px;
+    margin: 6px 0;
+    padding: 0 10px;
+    word-wrap: break-word;
 }
 
 .submit-button-area {
@@ -33,6 +42,7 @@ main {
 }
 
 .submit-button {
+    cursor: pointer;
     color: white;
     font-size: 110%;
     font-weight: bold;
