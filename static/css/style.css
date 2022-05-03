@@ -1,0 +1,72 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+}
+
+main {
+    width: 310px;
+    margin: 80px auto;
+}
+
+.auth-title {
+    font-size: 155%;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(24, 23, 23);
+    margin-bottom: 30px;
+}
+
+#input-container {
+    text-align: center;
+}
+
+.auth-input {
+    width: 280px;
+    outline: none;
+    border: solid 2px black;
+    padding: 6px 10px;
+    margin-bottom: 30px;
+}
+
+.submit-button-area {
+    text-align: center;
+}
+
+.submit-button {
+    color: white;
+    font-size: 110%;
+    font-weight: bold;
+    width: 305px;
+    padding: 5px;
+    margin: 3px 0px;
+    outline: lightgray;
+    background-color: royalblue;
+}
+
+.partition-line {
+    border: solid 1px lightgray;
+    background-color: lightgray;
+    margin: 30px 15px 10px 15px;
+}
+
+.go-to {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 80%;
+}
+
+a,a:visited{
+    color: black;
+}
+
+#menu {
+    margin-top: 45px;
+    text-align: center;
+}
+
+.menu-item {
+    padding: 5px;
+    font-size: 93%;
+    text-align: center;
+    display: inline-block;
+}
