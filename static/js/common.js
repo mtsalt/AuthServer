@@ -13,13 +13,14 @@ function postRequest(endpointUrl, objData) {
             // JSON Arrayの先頭が成功フラグ、失敗の場合2番目がエラーメッセージ
             if (!jsonData[0]) {    // サーバが失敗を返した場合
                 alert("Transaction error. " + json_data[1]);
-                return;
+                return null;
             }
             console.log("postRequest succeeded.");
             location.reload();
         },
         error: function() {
             console.log("error, postRequest failed.");
+            return null;
         },
         complete: function() {
             console.log("postRequest finished.");
@@ -42,9 +43,22 @@ function isEmpty(str) {
 }
 
 function isLettesOrNumbers(str) {
-    return str.match(/[^A-Za-z0-9]+/);
+    return str.match('/[^A-Za-z0-9]+/');
+}
+
+function isLettersAndNumbers(str) {
+    // return str.match('/^(?=.*[a-ZA-Z])(?=.*[0-9]])$/');
+    return true;
 }
 
 function usernameIsAlreadyTaken(str) {
-    return false;
+
+    const usernameAvailabilityUrl = "";
+    let isTaken = postRequest(usernameAvailabilityUrl);
+    if (isTaken == null) {
+        return null;
+    }
+    if (isTaken == true) {
+        return "Username is already taken.";
+    }
 }
