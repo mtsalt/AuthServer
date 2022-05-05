@@ -1,7 +1,8 @@
 let endpointUrl = location.href;
 
 window.onload = function initEvents() {
-
+    
+    initExecutionButton();
     initEventListeners();
 }
 
@@ -14,9 +15,6 @@ function postRegisterData() {
         "agreement_terms_and_policy": getCheckboxElementValue("agree")
     };
 
-    console.log(postData);
-    let hello = document.getElementById("username-error-info").textContent;
-    console.log(hello);
     // add result check and inform 
     // postRequest(endpointUrl, postData);
 }
@@ -72,5 +70,26 @@ function initEventListeners() {
     }
 
     // event listener (execute register, signin, send)
-    
+
+}
+
+function initExecutionButton() {
+
+    let registerButton = document.getElementById("register");
+    if (registerButton != null) {
+        registerButton.disabled = true;
+        registerButton.style.backgroundColor = "lightgray";
+    }
+
+    let signinButton = document.getElementById("signin");
+    if (signinButton != null) {
+        signinButton.disabled = true;
+        signinButton.style.backgroundColor = "lightgray";
+    }
+
+    let forgotpasswordButton = document.getElementById("forgot-password");
+    if (forgotpasswordButton != null) {
+        forgotpasswordButton.disabled = true;
+        forgotpasswordButton.style.backgroundColor = "lightgray";
+    }
 }

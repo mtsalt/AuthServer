@@ -22,6 +22,8 @@ func InitRouter() *gin.Engine {
 	// Post request list
 	router.POST("/register", register)
 	router.POST("/signin", signin)
+	router.POST("/forgot_password", forgotPassword)
+	router.POST("/account_availability", accountAvailability)
 
 	return router
 }
@@ -63,4 +65,19 @@ func register(ctx *gin.Context) {
 func signin(ctx *gin.Context) {
 	// get body from client
 	ctx.String(http.StatusOK, "signin")
+}
+
+func forgotPassword(ctx *gin.Context) {
+
+	ctx.String(http.StatusOK, "forgotPassword")
+}
+
+type accountAvailabilityResponse struct {
+	Availability bool `json:"availability"`
+}
+
+func accountAvailability(ctx *gin.Context) {
+
+	response := accountAvailabilityResponse{Availability: true}
+	ctx.JSON(http.StatusOK, response)
 }

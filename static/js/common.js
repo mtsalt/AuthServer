@@ -1,12 +1,15 @@
 function getInputElementValue(id) {
+
     return document.getElementById(id).value;
 }
 
 function getCheckboxElementValue(id) {
+
     return document.getElementById(id).checked;
 }
 
 function postRequest(endpointUrl, objData) {
+
     $.ajax({
         type: "post",
         url: endpointUrl,
@@ -33,6 +36,7 @@ function postRequest(endpointUrl, objData) {
 }
 
 function strLengthIsValid(str, minLen, maxLen) {
+
     let strLen = str.length;
     if (minLen <= strLen && strLen <= maxLen) {
         return true;
@@ -43,26 +47,56 @@ function strLengthIsValid(str, minLen, maxLen) {
 }
 
 function isEmpty(str) {
+
     return str === "";
 }
 
 function isLettesOrNumbers(str) {
+
     return str.match('/[^A-Za-z0-9]+/');
 }
 
 function isLettersAndNumbers(str) {
+
     // return str.match('/^(?=.*[a-ZA-Z])(?=.*[0-9]])$/');
     return true;
 }
 
 function usernameIsAlreadyTaken(str) {
 
-    const usernameAvailabilityUrl = "";
-    let isTaken = postRequest(usernameAvailabilityUrl);
-    if (isTaken == null) {
-        return null;
-    }
-    if (isTaken == true) {
-        return "Username is already taken.";
-    }
+    // const usernameAvailabilityUrl = location.host + "/account_availability";
+    // let postData = {
+    //     "username": str
+    // }
+    // let isTaken = postRequest(usernameAvailabilityUrl, postData);
+    // if (isTaken == null) {
+    //     return null;
+    // }
+    // if (isTaken == true) {
+    //     return "Username is already taken.";
+    // }
+}
+
+function setEnableButtonColor(buttonElem) {
+    buttonElem.style.backgroundColor = buttonEnabledlColor;
+    buttonElem.addEventListener('mouseover', function() {
+        buttonElem.style.backgroundColor = buttonEnabledHoverColor;
+    });
+    buttonElem.addEventListener('mouseleave', function() {
+        buttonElem.style.backgroundColor = buttonEnabledlColor;
+    })
+}
+
+function setDisabledButtonCollor(buttonElem) {
+    buttonElem.style.backgroundColor = buttonDisabledColor;
+}
+
+function changeButtonStateDisabled(buttonElem) {
+    buttonElem.disabled = true;
+    setDisabledButtonCollor(buttonElem);
+}
+
+function changeButtonStateEnable(buttonElem) {
+    buttonElem.disabled = false;
+    setEnableButtonColor(buttonElem);
 }
