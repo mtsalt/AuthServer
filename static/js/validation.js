@@ -14,7 +14,7 @@ function validateUsername(usernameStr) {
     }
 
     // kind of character
-    if (isLettesOrNumbers(usernameStr)) {
+    if (!isLettesOrNumbers(usernameStr)) {
         errorMessage += ("Username can only use letters and numbers." + " ");
     }
 
