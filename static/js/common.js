@@ -2,6 +2,10 @@ function getInputElementValue(id) {
     return document.getElementById(id).value;
 }
 
+function getCheckboxElementValue(id) {
+    return document.getElementById(id).checked;
+}
+
 function postRequest(endpointUrl, objData) {
     $.ajax({
         type: "post",

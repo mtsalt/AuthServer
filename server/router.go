@@ -54,7 +54,7 @@ func register(ctx *gin.Context) {
 	var data registerData
 	ctx.BindJSON(&data)
 
-	CreateAccount()
+	//CreateAccount()
 
 	// return response to client
 	ctx.String(http.StatusOK, data.Username+" "+data.Email+" "+data.Passowrd)

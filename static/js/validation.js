@@ -1,4 +1,4 @@
-const usernameMinLen = 6;
+const usernameMinLen = 5;
 const usernameMaxLen = 20;
 const passwordMinLen = 8;
 const passwordMaxLen = 20;
