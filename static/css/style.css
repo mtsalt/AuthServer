@@ -54,12 +54,12 @@ main {
     padding: 5px;
     margin: 3px 0px;
     outline: lightgray;
-    background-color: royalblue;
+    /* background-color: royalblue; */
 }
 
-.submit-button:hover {
+/* .submit-button:hover {
     background-color: rgb(65, 161, 225);
-}
+} */
 
 .checkbox-area {
     margin-top: 10px;

@@ -78,18 +78,18 @@ function initExecutionButton() {
     let registerButton = document.getElementById("register");
     if (registerButton != null) {
         registerButton.disabled = true;
-        registerButton.style.backgroundColor = "lightgray";
+        registerButton.style.backgroundColor = buttonDisabledColor;
     }
 
     let signinButton = document.getElementById("signin");
     if (signinButton != null) {
         signinButton.disabled = true;
-        signinButton.style.backgroundColor = "lightgray";
+        signinButton.style.backgroundColor = buttonDisabledColor;
     }
 
     let forgotpasswordButton = document.getElementById("forgot-password");
     if (forgotpasswordButton != null) {
         forgotpasswordButton.disabled = true;
-        forgotpasswordButton.style.backgroundColor = "lightgray";
+        forgotpasswordButton.style.backgroundColor = buttonDisabledColor;
     }
 }
