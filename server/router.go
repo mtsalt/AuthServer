@@ -44,9 +44,20 @@ func forgotPasswordPage(ctx *gin.Context) {
 }
 
 // Post request func
+type registerData struct {
+	Username string `json:"username"`
+	Email    string `json:"email"`
+	Passowrd string `json:"password"`
+}
+
 func register(ctx *gin.Context) {
-	// get body from client
-	ctx.String(http.StatusOK, "register")
+	var data registerData
+	ctx.BindJSON(&data)
+
+	CreateAccount()
+
+	// return response to client
+	ctx.String(http.StatusOK, data.Username+" "+data.Email+" "+data.Passowrd)
 }
 
 func signin(ctx *gin.Context) {

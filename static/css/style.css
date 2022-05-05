@@ -61,6 +61,27 @@ main {
     background-color: rgb(65, 161, 225);
 }
 
+.checkbox-area {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 3px;
+}
+
+.checkbox-label {
+    display: inline-block;
+    width: 285px;
+    font-size: 92%;
+    margin: 0;
+}
+
+.checkbox-label a {
+}
+
+.agreement-checkbox {
+    display: inline-block;
+    margin: 0;
+}
+
 .partition-line {
     border: solid 1px lightgray;
     background-color: lightgray;
