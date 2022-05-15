@@ -52,3 +52,98 @@ function validateEmail(emailStr) {
 // function confirmPassword(passwordStr, confirmPasswordStr) {
     
 // }
+
+class Validation {
+
+    errorInfoUsername = "";
+    errorInfoPassword = "";
+    errorInfoEmail = "";
+
+    textContentUsename = "";
+    textContentPassword = "";
+    textContentEmail = "";
+
+
+
+    username(usernameStr) {
+
+        this.errorInfoUsername = "";
+        this.textContentUsename = usernameStr;
+
+        // length
+        if (!strLengthIsValid(usernameStr, usernameMinLen, usernameMaxLen)) {
+            this.errorInfoUsername += ("Username length is 5 to 20 characters." + " ");
+        }
+
+        // kind of character
+        if (!isLettesOrNumbers(usernameStr)) {
+            this.errorInfoUsername += ("Username can only use letters and numbers." + " ");
+        }
+
+        // username is already taken or not
+        if (usernameIsAlreadyTaken(usernameStr)) {
+            this.errorInfoUsername += "Username is already taken.";
+        }
+
+    }
+
+    password(passwordStr) {
+
+        this.errorInfoPassword = "";
+        this.textContentPassword = passwordStr;
+
+        // length
+        if (!strLengthIsValid(passwordStr, passwordMinLen, passwordMaxLen)) {
+            this.errorInfoPassword += ("Password length is 8 to 20 characters." + " ");
+        }
+
+        // kind of character
+        if (!isLettersAndNumbers(passwordStr)) {
+            this.errorInfoPassword += "Password can use letters and numbers.";
+        }
+
+    }
+
+    email(emailStr) {
+
+        this.errorInfoEmail = "";
+        this.textContentEmail = emailStr;
+
+        const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+        if (!regex.test(emailStr)) {
+            this.errorInfoEmail += "Email address is invalid.";
+        }
+
+    }
+
+    isValidationAllSatisfied() {
+
+        if (this.isErrorInfoAllEmpty() && isAllTextContentSatisfied()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    isErrorInfoAllEmpty() {
+
+        let totalStr = this.errorInfoUsername + this.errorInfoPassword + this.errorInfoEmail;
+        if (isEmpty(totalStr)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    isAllTextContentSatisfied() {
+
+        if (!isEmpty(this.textContentUsename) && !isEmpty(this.textContentPassword) && !isEmpty(this.textContentEmail)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
