@@ -63,8 +63,6 @@ class Validation {
     textContentPassword = "";
     textContentEmail = "";
 
-
-
     username(usernameStr) {
 
         this.errorInfoUsername = "";
@@ -99,7 +97,7 @@ class Validation {
 
         // kind of character
         if (!isLettersAndNumbers(passwordStr)) {
-            this.errorInfoPassword += "Password can use letters and numbers.";
+            this.errorInfoPassword += "Password must use letters(uppder & lower) and numbers.";
         }
 
     }
@@ -109,16 +107,15 @@ class Validation {
         this.errorInfoEmail = "";
         this.textContentEmail = emailStr;
 
-        const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
-        if (!regex.test(emailStr)) {
+        if (!isValidEmailAddress(emailStr)) {
             this.errorInfoEmail += "Email address is invalid.";
         }
-
     }
 
     isValidationAllSatisfied() {
 
-        if (this.isErrorInfoAllEmpty() && isAllTextContentSatisfied()) {
+        let abc = this.isCheckboxTrue();
+        if (this.isErrorInfoAllEmpty() && this.isAllTextContentSatisfied() && this.isCheckboxTrue()) {
             return true;
         }
         else {
@@ -139,11 +136,23 @@ class Validation {
 
     isAllTextContentSatisfied() {
 
+        // TODO: 要素が存在しない場合もfalseとなるので対応が必要
         if (!isEmpty(this.textContentUsename) && !isEmpty(this.textContentPassword) && !isEmpty(this.textContentEmail)) {
             return true;
         }
         else {
             return false;
+        }
+    }
+
+    isCheckboxTrue() {
+
+        let checkbox = document.getElementById("agreement");
+        if (checkbox != null) {
+            return checkbox.checked;
+        }
+        else {
+            return true;
         }
     }
 }

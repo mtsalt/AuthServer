@@ -53,17 +53,33 @@ function isEmpty(str) {
 
 function isLettesOrNumbers(str) {
 
-    return str.match('/[^A-Za-z0-9]+/');
+    return /^[0-9a-zA-Z]+$/.test(str);
+    // return str.match('/[^A-Za-z0-9]+/');
 }
 
 function isLettersAndNumbers(str) {
 
-    // return str.match('/^(?=.*[a-ZA-Z])(?=.*[0-9]])$/');
-    return true;
+    const digitRegex = /(?=.*[0-9])/;
+    const lowerCaseRegex = /(?=.*[a-z])/;
+    const upperCaseRegex = /(?=.*[A-Z])/;
+
+    if (digitRegex.test(str) && lowerCaseRegex.test(str) && upperCaseRegex.test(str)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function isValidEmailAddress(str) {
+    
+    const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+    return regex.test(str);
 }
 
 function usernameIsAlreadyTaken(str) {
 
+    return false;
     // const usernameAvailabilityUrl = location.host + "/account_availability";
     // let postData = {
     //     "username": str
@@ -96,7 +112,7 @@ function changeButtonStateDisabled(buttonElem) {
     setDisabledButtonCollor(buttonElem);
 }
 
-function changeButtonStateEnable(buttonElem) {
+function changeButtonStateEnabled(buttonElem) {
     buttonElem.disabled = false;
     setEnableButtonColor(buttonElem);
 }
