@@ -1,0 +1,35 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    background-color: lightgray;
+}
+
+main {
+
+}
+
+#index-title {
+    color: white;
+    font-weight: bold;
+    font-size: 170%;
+    margin: 0;
+    padding: 15px;
+    background-color: black;
+}
+
+#content {
+    padding-top: 200px;
+    text-align: center;
+}
+
+/* tablet */
+@media screen and (min-width: 959px){ 
+    main {
+    }
+}
+
+/* smart phone  */
+@media screen and (max-width: 480px){
+    main {
+    }
+ }
